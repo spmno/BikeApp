@@ -1,0 +1,27 @@
+<h1>Listing bike_photos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bike</th>
+      <th>Photo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bike_photos.each do |bike_photo| %>
+      <tr>
+        <td><%= bike_photo.bike_id %></td>
+        <td><%= bike_photo.photo %></td>
+        <td><%= link_to 'Show', bike_photo %></td>
+        <td><%= link_to 'Edit', edit_bike_photo_path(bike_photo) %></td>
+        <td><%= link_to 'Destroy', bike_photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bike photo', new_bike_photo_path %>

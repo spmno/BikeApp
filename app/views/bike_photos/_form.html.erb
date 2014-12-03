@@ -1,0 +1,25 @@
+<%= form_for(@bike_photo) do |f| %>
+  <% if @bike_photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bike_photo.errors.count, "error") %> prohibited this bike_photo from being saved:</h2>
+
+      <ul>
+      <% @bike_photo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bike_id %><br>
+    <%= f.number_field :bike_id %>
+  </div>
+  <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.text_field :photo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
