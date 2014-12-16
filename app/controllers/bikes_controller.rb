@@ -2,6 +2,7 @@ class BikesController < ApplicationController
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
+  INPUT_PHOTO_COUNT = 10
 
   def index
     @bikes = Bike.all

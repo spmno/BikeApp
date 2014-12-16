@@ -1,10 +1,10 @@
-<h1>Listing bikes</h1>
+<h1><%= t("list_bikes") %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Summary</th>
+      <th><%= t("activerecord.attributes.bike.name") %></th>
+      <th><%= t("activerecord.attributes.bike.summary") %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Bike', new_bike_path %>
+<%= link_to t("new_bike"), new_bike_path %>
