@@ -16,11 +16,15 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.select(:brand_id, @brands.collect{|t| [t.name, t.id]}, :prompt => (t"select_brand")) %>
+  </div>
+  <div class="field">
     <%= f.label :summary %><br>
     <%= f.text_area :summary %>
   </div>
-  <% INPUT_PHOTO_COUNT.times %>
-
+  <% BikesController::INPUT_PHOTO_COUNT.times do |count| %>
+    <%= f.file_field :"#{count}" %>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -14,6 +14,7 @@ class BikesController < ApplicationController
   end
 
   def new
+    @brands = Brand.all
     @bike = Bike.new
     respond_with(@bike)
   end
