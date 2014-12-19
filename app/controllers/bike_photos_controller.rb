@@ -1,7 +1,7 @@
 class BikePhotosController < ApplicationController
   before_action :set_bike_photo, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @bike_photos = BikePhoto.all

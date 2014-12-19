@@ -22,10 +22,20 @@
     <%= f.label :summary %><br>
     <%= f.text_area :summary %>
   </div>
-  <% BikesController::INPUT_PHOTO_COUNT.times do |count| %>
-    <%= f.file_field :"#{count}" %>
+  <%= f.fields_for :bike_photos do |p| %>
+      <div class="field">
+        <%= p.label :photo %><br>
+        <%= p.file_field :photo, :multiple => true, name: "bike_photos[photo][]" %>
+      </div>
   <% end %>
-  <div class="actions">
+
+  <% if params[:controller] == "bikes" && params[:action] == "edit" %>
+      <% @bike.bike_photos.each do |p| %>
+          <%= image_tag p.photo %>
+      <% end %>
+  <% end %>
+
+    <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
