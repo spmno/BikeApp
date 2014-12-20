@@ -1,0 +1,22 @@
+zh-CN:
+  activerecord:
+    models:
+      brand: '品牌'
+    attributes:
+      brand:
+        name: '品牌名称'
+        photo: '图片'
+        summary: '简介'
+      bike:
+        name: '自行车名称'
+        summary: '简介'
+        photo: '图片'
+        bike_photos: '图片'
+      bike_photo:
+        photo: '图片'
+
+  list_brands: '品牌列表'
+  list_bikes: '车列表'
+  new_brand: '新建品牌'
+  new_bike: '新建自行车'
+  select_brand: '选择品牌'
