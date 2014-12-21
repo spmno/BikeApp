@@ -1,18 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t("activerecord.attributes.bike.name") %></strong>
   <%= @brand.name %>
 </p>
 
 <p>
-  <strong>Photo:</strong>
-  <%= @brand.photo %>
+  <strong><%= t("activerecord.attributes.bike.photo") %></strong>
+  <%= image_tag @brand.photo %>
 </p>
 
 <p>
-  <strong>Summary:</strong>
+  <strong><%= t("activerecord.attributes.bike.summary") %></strong>
   <%= @brand.summary %>
+</p>
+
+<p>
+  <strong><%= t("list_bikes") %></strong>
+  <table>
+    <% @bikes.each do |bike| %>
+        <tr>
+          <td><%= bike.name %></td>
+        </tr>
+    <% end %>
+  </table>
 </p>
 
 <%= link_to 'Edit', edit_brand_path(@brand) %> |

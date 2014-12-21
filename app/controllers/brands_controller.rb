@@ -9,6 +9,7 @@ class BrandsController < ApplicationController
   end
 
   def show
+    @bikes = @brand.bikes
     respond_with(@brand)
   end
 
