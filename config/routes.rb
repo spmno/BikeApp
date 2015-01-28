@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :dealers
+
   resources :bike_photos
 
   resources :bikes

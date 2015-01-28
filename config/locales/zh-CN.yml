@@ -14,9 +14,17 @@ zh-CN:
         bike_photos: '图片'
       bike_photo:
         photo: '图片'
+      dealer:
+        name: '经销商名称'
+        address: '地址'
+        summary: '简介'
+
 
   list_brands: '品牌列表'
   list_bikes: '车列表'
+  list_dealer: '经销商列表'
   new_brand: '新建品牌'
   new_bike: '新建自行车'
+  new_dealer: '新建经销商'
   select_brand: '选择品牌'
+  select_bike: '选择车型'
