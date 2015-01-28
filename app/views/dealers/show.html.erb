@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t("activerecord.attributes.dealer.name") %></strong>
+  <%= @dealer.name %>
+</p>
+
+<p>
+  <strong><%= t("activerecord.attributes.dealer.address") %></strong>
+  <%= @dealer.address %>
+</p>
+
+<p>
+  <strong><%= t("activerecord.attributes.dealer.summary") %></strong>
+  <%= @dealer.summary %>
+</p>
+
+<p>
+  <strong><%= t("activerecord.attributes.bike.name") %></strong>
+  <%= @dealer.bike.name %>
+</p>
+
+<%= link_to 'Edit', edit_dealer_path(@dealer) %> |
+<%= link_to 'Back', dealers_path %>
