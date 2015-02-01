@@ -1,7 +1,7 @@
 class DealersController < ApplicationController
   before_action :set_dealer, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @dealers = Dealer.all

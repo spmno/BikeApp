@@ -13,5 +13,16 @@
     <%= image_tag p.photo %>
     <%= link_to "Edit Photo", edit_bike_photo_path(p) %>
 <% end %>
+
+<p>
+  <strong><%= t("list_dealer") %></strong>
+<table>
+  <% @bike_dealers.each do |dealer| %>
+      <tr>
+        <td><%= dealer.name %></td>
+      </tr>
+  <% end %>
+</table>
+</p>
 <%= link_to 'Edit', edit_bike_path(@bike) %> |
 <%= link_to 'Back', bikes_path %>

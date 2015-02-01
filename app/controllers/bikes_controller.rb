@@ -11,6 +11,7 @@ class BikesController < ApplicationController
 
   def show
     @bike_photos = @bike.bike_photos.all
+    @bike_dealers = @bike.dealers
     respond_with(@bike)
   end
 
