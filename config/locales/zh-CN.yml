@@ -11,6 +11,7 @@ zh-CN:
         name: '自行车名称'
         summary: '简介'
         photo: '图片'
+        price: '价格'
         bike_photos: '图片'
       bike_photo:
         photo: '图片'

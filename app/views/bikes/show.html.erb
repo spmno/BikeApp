@@ -9,6 +9,11 @@
   <strong>Summary:</strong>
   <%= @bike.summary %>
 </p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @bike.price %>
+</p>
 <% @bike_photos.each do |p| %>
     <%= image_tag p.photo %>
     <%= link_to "Edit Photo", edit_bike_photo_path(p) %>
