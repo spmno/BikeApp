@@ -26,13 +26,18 @@
     <%= f.label :price %><br>
     <%= f.text_field :price %>
   </div>
+  <!--
   <%= f.fields_for :bike_photos do |p| %>
       <div class="field">
         <%= p.label :photo %><br>
         <%= p.file_field :photo, :multiple => true, name: "bike_photos[photo][]" %>
       </div>
   <% end %>
-
+  -->
+  <div class="field">
+    <%= f.label :photo %><br>
+    <%= f.file_field :photo, :multiple => true, name: "bike_photos[photo][]" %>
+  </div>
   <% if params[:controller] == "bikes" && params[:action] == "edit" %>
       <% @bike.bike_photos.each do |p| %>
           <%= image_tag p.photo %>

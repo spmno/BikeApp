@@ -48,6 +48,10 @@ class BikesController < ApplicationController
 
   def update
     @bike.update(bike_params)
+    @bike.bike_photos.map {|photo| photo.destroy!}
+    params[:bike_photos]['photo'].each do |photo|
+      @bike_photo = @bike.bike_photos.create!(photo: photo, bike_id: @bike.id)
+    end
     respond_with(@bike)
   end
 
@@ -62,6 +66,6 @@ class BikesController < ApplicationController
     end
 
     def bike_params
-      params.require(:bike).permit(:name, :summary, :brand_id, :price, bike_photos_params: [:id, :bike_id, :photo])
+      params.require(:bike).permit(:name, :summary, :brand_id, :price, bike_photos_attributes: [:id, :bike_id, :photo])
     end
 end

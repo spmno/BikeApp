@@ -27,5 +27,6 @@ zh-CN:
   new_brand: '新建品牌'
   new_bike: '新建自行车'
   new_dealer: '新建经销商'
+  edit_bike: '编辑自行车'
   select_brand: '选择品牌'
   select_bike: '选择车型'
