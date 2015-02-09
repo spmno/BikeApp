@@ -48,9 +48,11 @@ class BikesController < ApplicationController
 
   def update
     @bike.update(bike_params)
-    @bike.bike_photos.map {|photo| photo.destroy!}
-    params[:bike_photos]['photo'].each do |photo|
-      @bike_photo = @bike.bike_photos.create!(photo: photo, bike_id: @bike.id)
+    if params[:bike_photos]
+      @bike.bike_photos.map {|photo| photo.destroy!}
+      params[:bike_photos]['photo'].each do |photo|
+        @bike_photo = @bike.bike_photos.create!(photo: photo, bike_id: @bike.id)
+      end
     end
     respond_with(@bike)
   end
