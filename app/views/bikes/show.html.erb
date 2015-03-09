@@ -1,33 +1,39 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <% @bike_photos.each do |p| %>
+        <%= image_tag p.photo, :class => "main-image" %>
+        <!-- <%= link_to "Edit Photo", edit_bike_photo_path(p) %> -->
+    <% end %>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @bike.name %>
-</p>
+  <div class="row">
+    <div class="col-md-4 col-xl-4 col-lg-4"><%= t("activerecord.attributes.bike.name") %></div>
+    <div class="col-md-8 col-xl-8 col-lg-8"><%= @bike.name %></div>
+  </div>
 
-<p>
-  <strong>Summary:</strong>
-  <%= @bike.summary %>
-</p>
+  <div class="row">
+    <div class="col-md-4 col-xl-4 col-lg-4"><%= t("activerecord.attributes.bike.summary") %></div>
+    <div class="col-md-4 col-xl-4 col-lg-4"><%= @bike.summary %></div>
+  </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @bike.price %>
-</p>
-<% @bike_photos.each do |p| %>
-    <%= image_tag p.photo %>
-    <%= link_to "Edit Photo", edit_bike_photo_path(p) %>
-<% end %>
+  <div class="row">
+    <div class="col-md-4 col-xl-4 col-lg-4"><%= t("activerecord.attributes.bike.price") %></div>
+    <div class="col-md-4 col-xl-4 col-lg-4"><%= @bike.price %></div>
+  </div>
 
-<p>
-  <strong><%= t("list_dealer") %></strong>
-<table>
-  <% @bike_dealers.each do |dealer| %>
-      <tr>
-        <td><%= dealer.name %></td>
-      </tr>
-  <% end %>
-</table>
-</p>
-<%= link_to 'Edit', edit_bike_path(@bike) %> |
-<%= link_to 'Back', bikes_path %>
+
+  <p>
+    <strong><%= t("list_dealer") %></strong>
+  <table>
+    <% @bike_dealers.each do |dealer| %>
+        <tr>
+          <td><%= dealer.name %></td>
+        </tr>
+    <% end %>
+  </table>
+  </p>
+  <%= link_to 'Edit', edit_bike_path(@bike) %> |
+  <%= link_to 'Back', bikes_path %>
+
+</div>
