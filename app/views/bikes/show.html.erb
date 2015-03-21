@@ -2,24 +2,24 @@
 <div class="container">
   <div class="row">
     <% @bike_photos.each do |p| %>
-        <%= image_tag p.photo, :class => "main-image" %>
+        <%= image_tag p.photo, :class => "col-md-12 col-xs-12 col-lg-12" %>
         <!-- <%= link_to "Edit Photo", edit_bike_photo_path(p) %> -->
     <% end %>
   </div>
 
-  <div class="row">
+  <div class="row input-item">
     <div class="col-md-4 col-xl-4 col-lg-4"><%= t("activerecord.attributes.bike.name") %></div>
-    <div class="col-md-8 col-xl-8 col-lg-8"><%= @bike.name %></div>
+    <div class="col-md-8 col-xl-8 col-lg-8 text-right"><%= @bike.name %></div>
   </div>
 
-  <div class="row">
+  <div class="row input-item">
     <div class="col-md-4 col-xl-4 col-lg-4"><%= t("activerecord.attributes.bike.summary") %></div>
-    <div class="col-md-4 col-xl-4 col-lg-4"><%= @bike.summary %></div>
+    <div class="col-md-8 col-xl-8 col-lg-8 text-right"><%= @bike.summary %></div>
   </div>
 
-  <div class="row">
+  <div class="row input-item">
     <div class="col-md-4 col-xl-4 col-lg-4"><%= t("activerecord.attributes.bike.price") %></div>
-    <div class="col-md-4 col-xl-4 col-lg-4"><%= @bike.price %></div>
+    <div class="col-md-8 col-xl-8 col-lg-8 text-right"><%= @bike.price %></div>
   </div>
 
 
@@ -33,7 +33,8 @@
     <% end %>
   </table>
   </p>
+  <!--
   <%= link_to 'Edit', edit_bike_path(@bike) %> |
   <%= link_to 'Back', bikes_path %>
-
+  -->
 </div>
